@@ -244,8 +244,8 @@ Open the notebook
 **Notes:**
 * Select kernel: conda_tensorflow_p27 (this is very important; python3.6 will not work without code changes)
 * You need to change the S3 bucket to a bucket you have given the SageMaker execution role access to in both:
-- the upload cell
-- the training job cell
+    * the upload cell
+    * the training job cell
 
 More info:
 https://aws.amazon.com/blogs/machine-learning/simulate-quantum-systems-on-amazon-sagemaker/
