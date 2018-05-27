@@ -246,6 +246,7 @@ Open the notebook
 * You need to change the S3 bucket to a bucket you have given the SageMaker execution role access to in both:
     * the upload cell
     * the training job cell
+i.e. replace all instances of sagemaker-kessle31 with your bucket name
 
 More info:
 https://aws.amazon.com/blogs/machine-learning/simulate-quantum-systems-on-amazon-sagemaker/
