@@ -233,14 +233,18 @@ Discuss: After completion: Why can't you get very good accuracy in the validatio
 ### Lab 6: Superradiance
 
 Open terminal in Jupyter
+```
 cd Sagemaker
 mkdir simulate-quantum-systems
 cd simulate-quantum-systems
 git clone https://github.com/emkessler/sagemaker.git
+```
 Open the notebook
-Select kernel: conda_tensorflow_p27 (this is very important; python3.6 will not work without code changes)
-You need to change the S3 bucket to a bucket you have given the SageMaker role access to in the upload cell
-You also need to change the S3 bucket to a bucket you have given the SageMaker role access to in the training job cell
+
+**Notes:**
+* Select kernel: conda_tensorflow_p27 (this is very important; python3.6 will not work without code changes)
+* You need to change the S3 bucket to a bucket you have given the SageMaker role access to in the upload cell
+* You also need to change the S3 bucket to a bucket you have given the SageMaker role access to in the training job cell
 
 More info:
 https://aws.amazon.com/blogs/machine-learning/simulate-quantum-systems-on-amazon-sagemaker/
