@@ -12,7 +12,7 @@ During this workshop, you'll explore various data sets, create model training jo
 
 ### AWS Account
 
-In order to complete this workshop you'll need an AWS Account, and an AWS IAM user in that account with at least full permissions to the following AWS services: 
+In order to complete this workshop you'll need an AWS Account, and an AWS IAM user in that account with at least full permissions to the following AWS services:
 
 - AWS IAM
 - Amazon S3
@@ -20,7 +20,7 @@ In order to complete this workshop you'll need an AWS Account, and an AWS IAM us
 
 **Use Your Own Account**: The code and instructions in this workshop assume only one student is using a given AWS account at a time. If you try sharing an account with another student, you'll run into naming conflicts for certain resources. You can work around these by appending a unique suffix to the resources that fail to create due to conflicts, but the instructions do not provide details on the changes required to make this work. Use a personal account or create a new AWS account for this workshop rather than using an organization’s account to ensure you have full access to the necessary services and to ensure you do not leave behind any resources from the workshop.
 
-**Costs**: Some, but NOT all, of the resources you will launch as part of this workshop are eligible for the AWS free tier if your account is less than 12 months old. See the [AWS Free Tier page](https://aws.amazon.com/free/) for more details. An example of a resource that is **not** covered by the free tier is the ml.m4.xlarge notebook instance used in some workshops. To avoid charges for endpoints and other resources you might not need after you've finished a workshop, please refer to the [**Cleanup Guide**](./CleanupGuide). 
+**Costs**: Some, but NOT all, of the resources you will launch as part of this workshop are eligible for the AWS free tier if your account is less than 12 months old. See the [AWS Free Tier page](https://aws.amazon.com/free/) for more details. An example of a resource that is **not** covered by the free tier is the ml.m4.xlarge notebook instance used in some workshops. To avoid charges for endpoints and other resources you might not need after you've finished a workshop, please refer to the [**Cleanup Guide**](./CleanupGuide).
 
 
 ### AWS Region
@@ -57,7 +57,7 @@ Be sure you have completed all of the prerequisites above.
 
 ### Amazon Web Services:  A Brief Overview
 
-If you are new to Amazon Web Services (AWS), read this section. 
+If you are new to Amazon Web Services (AWS), read this section.
 
 Amazon Web Services (AWS) is a secure cloud services platform, offering compute power, database storage, content delivery and other functionality.
 
@@ -92,7 +92,7 @@ Security is, nonetheless, a shared responsibility. AWS takes responsibility for 
 
 If you are new to using Jupyter notebooks, read this section.
 
-Jupyter is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more. With respect to code, it can be thought of as a web-based IDE that executes code on the server it is running on instead of locally. 
+Jupyter is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more. With respect to code, it can be thought of as a web-based IDE that executes code on the server it is running on instead of locally.
 
 There are two main types of "cells" in a notebook:  code cells, and "markdown" cells with explanatory text. You will be running the code cells.  These are distinguished by having "In" next to them in the left margin next to the cell, and a greyish background.  Markdown cells lack "In" and have a white background. In the screenshot below, the upper cell is a markdown cell, while the lower cell is a code cell:
 
@@ -164,6 +164,28 @@ Use the console or AWS CLI to create an Amazon S3 bucket. Keep in mind that your
 
 ![Open Notebook](./images/jupyter-homepage.png)
 
+#### 4. Cloning the Labs
+
+In the notebook, top right, New → Terminal
+
+![New terminal screenshot](./images/1-new-terminal.png)
+
+```
+cd SageMaker
+git clone https://github.com/wleepang/sagemaker4research-workshop.git
+```
+**Note:** You can right click the terminal to paste the git clone command:
+
+![New terminal screenshot](./images/2-paste-git-clone.png)
+
+![New terminal screenshot](./images/3-ran-git-clone.png)
+
+Go back to the notebook folders tab and you will now see the sagemaker4research-workshop folder.
+
+![New terminal screenshot](./images/4-sagemaker4research-foler-visible.png)
+
+**Note:** We will use this same approach (git clone from the terminal) for loading the optional labs (5-7) into your SageMaker notebooks
+
 
 ## Labs
 
@@ -186,6 +208,53 @@ The labs for this workshop have been chosen to highlight capabilities of Amazon 
     Machine learning is a data driven process.  Sharing key datasets publicly allows smart minds around the world to perform novel analyses and generate new insights.  In this lab, we will use the [1000 Genomes Project](https://aws.amazon.com/1000genomes/) dataset - a collection of DNA sequence variations from over 1000 individuals.  We will apply unsupervised learning via the Amazon-provided K-Means algorithm to group the geographic location of sequences based on their variant information.
 
 
+## Optional Labs 5-7
+Depending on time you can do one or more of these labs (5-7). Choose the ones that interest you.
+
+
+### Lab 5: Satellite Imagery
+
+Git to clone: https://github.com/developmentseed/label-maker
+Notebook is under examples → nets → SageMaker_mx-lenet.ipynb
+
+Dataset is already available in this bucket:
+
+*Optional* (approx 20 minutes)
+If you'd like to create the dataset you can follow:
+https://developmentseed.org/blog/2018/01/19/sagemaker-label-maker-case/
+
+Discuss: Why can't you get very good accuracy in the validation step?
+
+[Troubleshooting Tips](./Labs/Optional/05-satellite-images.md)
+
+
+### Lab 6: Superradiance
+
+Open terminal in Jupyter
+cd Sagemaker
+mkdir simulate-quantum-systems
+cd simulate-quantum-systems
+git clone https://github.com/emkessler/sagemaker.git
+Open the notebook
+Select kernel: conda_tensorflow_p27 (this is very important; python3.6 will not work without code changes)
+You need to change the S3 bucket to a bucket you have given the SageMaker role access to in the upload cell
+You also need to change the S3 bucket to a bucket you have given the SageMaker role access to in the training job cell
+
+More info:
+https://aws.amazon.com/blogs/machine-learning/simulate-quantum-systems-on-amazon-sagemaker/
+
+
+### Lab 7: Principal Component Analysis
+
+**Warning:** Minimal testing by facilitators, advanced students only
+
+https://aws.amazon.com/blogs/machine-learning/perform-a-large-scale-principal-component-analysis-faster-using-amazon-sagemaker/
+
+This post walks you through benchmarking PCA across the built-in SageMaker algorithm, SparkML, and Scikit-learn on a fairly large dataset.
+
+This will appeal to researchers who would be inclined to know about the internal workings of SparkML and Scikit-Learn and curious to see the comparison.
+
+
 ## Cleanup
 
 To avoid charges for resources you no longer need when you're done with this workshop, you can delete them or, in the case of your notebook instance, stop them.  Here are the resources you should consider:
@@ -193,17 +262,17 @@ To avoid charges for resources you no longer need when you're done with this wor
 - **Endpoints**:  these are the clusters of one or more instances serving inferences from your models. If you did not delete them from within a notebook, you can delete them via the SageMaker console.  To do so:
 
   - Click the **Endpoints** link in the left panel.  
-  
-  - Then, for each endpoint, click the radio button next to it, then select **Delete** from the **Actions** drop down menu. 
-  
+
+  - Then, for each endpoint, click the radio button next to it, then select **Delete** from the **Actions** drop down menu.
+
   - You can follow a similar procedure to delete the related Models and Endpoint configurations.
 
 
-- **Notebook instance**:  you have two options if you do not want to keep the notebook instance running. If you would like to save it for later, you can stop rather than deleting it. 
+- **Notebook instance**:  you have two options if you do not want to keep the notebook instance running. If you would like to save it for later, you can stop rather than deleting it.
 
   - To **stop** a notebook instance:  click the **Notebook instances** link in the left pane of the SageMaker console home page. Next, click the **Stop** link under the 'Actions' column to the left of your notebook instance's name.  After the notebook instance is stopped, you can start it again by clicking the **Start** link.  Keep in mind that if you stop rather than delete it, you will be charged for the storage associated with it.  
 
-  - To **delete** a notebook instance:  first stop it per the instruction above. Next, click the radio button next to your notebook instance, then select **Delete** from the **Actions** drop down menu. 
+  - To **delete** a notebook instance:  first stop it per the instruction above. Next, click the radio button next to your notebook instance, then select **Delete** from the **Actions** drop down menu.
 
 - **S3 Bucket**:  if you retain the S3 bucket created for this workshop, you will be charged for storage.  To avoid these charges if you no longer wish to use the bucket, you may delete it. To delete the bucket, go to the S3 service console, and locate your bucket's name in the bucket table. Next, click in the bucket table row for your bucket to highlight the table row. At the top of the table, the **Delete Bucket** button should now be enabled, so click it and then click the **Confirm** button in the resulting pop-up to complete the deletion.  
 
