@@ -217,13 +217,15 @@ Depending on time you can do one or more of these labs (5-7). Choose the ones th
 Git to clone: https://github.com/developmentseed/label-maker
 Notebook is under examples → nets → SageMaker_mx-lenet.ipynb
 
-Dataset is already available in this bucket:
+Dataset is already available in these s3 buckets (use the one that corresponds to the region your notebook is in):
+* btgood-sagemaker4research-us-west-2
+* btgood-sagemaker4research-us-east-1
 
 *Optional* (approx 20 minutes)
 If you'd like to create the dataset you can follow:
 https://developmentseed.org/blog/2018/01/19/sagemaker-label-maker-case/
 
-Discuss: Why can't you get very good accuracy in the validation step?
+Discuss: After completion: Why can't you get very good accuracy in the validation step?
 
 [Troubleshooting Tips](./Labs/Optional/05-satellite-images.md)
 
