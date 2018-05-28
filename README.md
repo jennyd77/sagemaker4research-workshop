@@ -172,7 +172,7 @@ In the notebook, top right, New → Terminal
 
 ```
 cd SageMaker
-git clone https://github.com/wleepang/sagemaker4research-workshop.git
+git clone https://github.com/benthurgood/sagemaker4research-workshop.git
 ```
 **Note:** You can right click the terminal to paste the git clone command:
 
