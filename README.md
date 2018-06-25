@@ -144,7 +144,7 @@ Use the console or AWS CLI to create an Amazon S3 bucket. Keep in mind that your
 
 ![Notebook Instances](./images/notebook-instances.png)
 
-4. Type smworkshop-[First Name]-[Last Name] into the **Notebook instance name** text box, and select ml.m4.xlarge for the **Notebook instance type**.
+4. Type smworkshop-[First Name]-[Last Name] into the **Notebook instance name** text box, and select ml.t2.medium for the **Notebook instance type**.
 
 ![Create Notebook Instance](./images/notebook-settings.png)
 
@@ -172,7 +172,7 @@ In the notebook, top right, New → Terminal
 
 ```
 cd SageMaker
-git clone https://github.com/benthurgood/sagemaker4research-workshop.git
+git clone https://github.com/jennyd77/sagemaker4research-workshop.git
 ```
 **Note:** You can right click the terminal to paste the git clone command:
 
